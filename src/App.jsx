@@ -93,7 +93,8 @@ export default function App() {
       await fetch(WEBHOOK_URL, {
         method: 'POST',
         mode: 'no-cors',
-        body: new Blob([JSON.stringify(payload)]),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: JSON.stringify(payload),
       })
       setSubmitted(true)
     } catch (e) {
