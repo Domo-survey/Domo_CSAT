@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import domoLogo from './assets/domo-logo.png'
 
 const WEBHOOK_URL =
@@ -51,6 +51,12 @@ export default function App() {
   const customerAccount    = params.get('account')      || ''
   const customerContact    = params.get('contact')      || ''
   const customerContactName = params.get('contact_name') || ''
+
+  useEffect(() => {
+    if (window.location.search) {
+      window.history.replaceState({}, '', window.location.pathname)
+    }
+  }, [])
 
   const [answers, setAnswers] = useState({
     q1_value_delivered:    null,
