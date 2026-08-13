@@ -136,11 +136,6 @@ export default function App() {
           <div className="header-bar" />
           <h1>Domo Consulting — Customer Feedback</h1>
         </div>
-        {(customerAccount || projectName) && (
-          <div className="context-pill">
-            {customerAccount}{projectName ? ` · ${projectName}` : ''}
-          </div>
-        )}
         <p className="intro">
           Thank you for working with Domo Consulting. Please take a moment to share
           your experience — your feedback helps us improve.
